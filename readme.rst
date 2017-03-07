@@ -63,11 +63,11 @@ In case of merge conflicts or errors, then... the script will fail :P
 Create a Pull Request
 =====================
 
-# Go to https://github.com/python/cpython to create the pull requests.
+1. Go to https://github.com/python/cpython to create the pull requests.
 
-# Prefix the pull request description with the branch name, e.g.::
+2. Prefix the pull request description with the branch `[X.Y]`, e.g.::
      
      [3.6] bpo-xxxxx: Fix this and that
      
-# Apply the appropriate `cherry-pick for ...` label
+3. Apply the appropriate `cherry-pick for ...` label
 
