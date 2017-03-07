@@ -1,3 +1,5 @@
+.. contents::
+
 Setup Info
 ==========
 
@@ -55,8 +57,17 @@ What this will do:
     (venv) $ git checkout master
     (venv) $ git branch -D 6de2b78-3.6
     
-
-
-Then go to https://github.com/python/cpython to create the pull requests.
-
 In case of merge conflicts or errors, then... the script will fail :P
+
+
+Create a Pull Request
+=====================
+
+# Go to https://github.com/python/cpython to create the pull requests.
+
+# Prefix the pull request description with the branch name, e.g.::
+     
+     [3.6] bpo-xxxxx: Fix this and that
+     
+# Apply the appropriate `cherry-pick for ...` label
+
