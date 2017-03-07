@@ -42,11 +42,10 @@ def get_git_upstream_remote():
     Uses "upstream" if it exists, "origin" otherwise
     """
     cmd = "git remote get-url upstream"
-    try:
-        run_cmd(cmd)
-    except subprocess.CalledProcessError:
+    if run_cmd(cmd):
         return "origin"
-    return "upstream"
+    else:
+        return "upstream"
 
 
 def run_cmd(cmd):
