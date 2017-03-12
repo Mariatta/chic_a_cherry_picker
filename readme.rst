@@ -34,6 +34,13 @@ Requires Python 3.6 and virtualenv.
     (venv) $ git remote add upstream https://github.com/python/cpython.git
     (venv) $ cd ../
 
+The following `git remote` configurations are supported:
+
+* if an `upstream` remote is defined, then it is used as the source of
+  upstream changes and as the base for cherry-pick branches. Otherwise,
+  `origin` is used for that purpose.
+* if a `pr` remote is defined, then it is used as the target for pushing
+  cherry-pick branches. Otherwise, `origin` is used for that purpose.
 
 Cherry-picking :snake: :cherries: :pick:
 ==============
@@ -62,19 +69,26 @@ What this will do:
     
     (venv) $ git fetch upstream
     
-    (venv) $ git checkout -b 6de2b78-3.5 upstream/3.5
+    (venv) $ git checkout -b backport-6de2b78-3.5 upstream/3.5
     (venv) $ git cherry-pick -x 6de2b7817f-some-commit-sha1-d064 
-    (venv) $ git push origin 6de2b78-3.5
+    (venv) $ git push origin backport-6de2b78-3.5
     (venv) $ git checkout master
-    (venv) $ git branch -D 6de2b78-3.5
+    (venv) $ git branch -D backport-6de2b78-3.5
     
-    (venv) $ git checkout -b 6de2b78-3.6 upstream/3.6
+    (venv) $ git checkout -b backport-6de2b78-3.6 upstream/3.6
     (venv) $ git cherry-pick -x 6de2b7817f-some-commit-sha1-d064 
-    (venv) $ git push origin 6de2b78-3.6
+    (venv) $ git push origin backport-6de2b78-3.6
     (venv) $ git checkout master
-    (venv) $ git branch -D 6de2b78-3.6
+    (venv) $ git branch -D backport-6de2b78-3.6
+
+After each push command, it will also open a browser tab ready to submit
+the relevant PR back to the main CPython repository.
 
 In case of merge conflicts or errors, then... the script will fail :stuck_out_tongue:
+
+Passing the `--dryrun` option will cause the script to print out all the
+steps it would execute without actually executing any of them (although the
+latest upstream changes will be fetched even in dryrun mode)
 
 
 Creating Pull Requests
