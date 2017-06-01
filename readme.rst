@@ -102,5 +102,5 @@ The url of the pull request page looks similar to the following::
    
 .. raw:: html
 
-   <a href="https://asciinema.org/a/122933autoplay=1" target="_blank"><img src="https://asciinema.org/a/122933.png" width="835"/></a>
+   <a href="https://asciinema.org/a/122933autoplay=1" target="_blank"><img src="https://asciinema.org/a/122933.png" width="400"/></a>
 
